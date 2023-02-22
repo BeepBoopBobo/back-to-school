@@ -4,9 +4,7 @@ import TeamsScore from "./components/TeamsScore.vue";
 </script>
 
 <template>
-  <header>
-    <TeamsScore></TeamsScore>
-  </header>
+  <TeamsScore></TeamsScore>
 
   <RouterView />
 </template>

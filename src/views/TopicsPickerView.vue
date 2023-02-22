@@ -11,44 +11,74 @@ export default {
     return {};
   },
   methods: {},
+  created() {
+    this.topicsStore.printParents();
+  },
 };
 </script>
 <template>
   <div class="page-content">
-    <h1>This is an top pics page</h1>
-    <button @click="teamsStore.handleNextTurn()">next turn</button>
-    <button @click="teamsStore.awardPointsToActive(500)">Give 500</button>
-    <button @click="topicsStore.setActiveQuestion('pop')">Select</button>
-  </div>
+    <!-- <div id="controlls">
+      <button @click="teamsStore.handleNextTurn()">next turn</button>
+      <button @click="teamsStore.awardPointsToActive(500)">Give 500</button>
+      <button @click="topicsStore.setActiveQuestion('pop')">Select</button>
+    </div> -->
 
-  <div
-    v-for="topic in topicsStore.topics"
-    @click="topicsStore.toggleActiveTopic(topic.id)"
-    :key="topic.id"
-  >
-    {{ topic.name }}, {{ topic.id }}
-  </div>
-  <h1>Active topics</h1>
-  <div v-for="aTopic in topicsStore.activeTopics">
-    {{ aTopic.name }}
-    <div
-      v-for="question in aTopic.questions"
-      @click="topicsStore.setActiveQuestion(question.name)"
-    >
-      {{ question.points }}
-    </div>
-
-    aQ: {{ topicsStore.getActiveQuestion?.name }}
-  </div>
-  <!-- <div>
-    <h2>
-      {{ topicsStore.getActiveQuestion.name }}
+    <h2 class="header">
+      Active topics {{ topicsStore.activeTopics.length }}/
+      {{ topicsStore.maxTopics }}
     </h2>
-    <div v-for="answer in topicsStore.getActiveQuestion.wrongA">
-      {{ answer }}
+
+    <div class="themes-box">
+      <div v-for="parent in topicsStore.getParents" class="parent-box">
+        <div class="theme headline">
+          {{ parent }}
+        </div>
+        <div class="children-container">
+          <div
+            @click="
+              topicsStore.activeTopics.length < topicsStore.maxTopics
+                ? topicsStore.toggleActiveTopic(topic.id)
+                : topicsStore.activeTopics.find((tp) => tp.id == topic.id) !=
+                  undefined
+                ? topicsStore.toggleActiveTopic(topic.id)
+                : ''
+            "
+            v-for="topic in topicsStore.getTopicsByParent.find(
+              (item) => item.parentTopic == parent
+            ).childTopics"
+            :class="
+              topicsStore.activeTopics.includes(topic)
+                ? 'child-topic container active'
+                : 'child-topic container'
+            "
+          >
+            {{ topic.name }}
+          </div>
+        </div>
+      </div>
     </div>
-    {{ topicsStore.getActiveQuestion.rightA }}
-  </div> -->
+    <RouterLink to="/select-question">
+      <button>NEXT</button>
+    </RouterLink>
+  </div>
 </template>
 
-<style></style>
+<style>
+.parent-box {
+  margin-top: 20px;
+}
+.theme {
+  font-size: 1.5rem;
+}
+.children-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.child-topic {
+  padding: 10px 20px;
+  color: black;
+  background-color: white;
+}
+</style>

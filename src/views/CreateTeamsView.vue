@@ -25,13 +25,15 @@ export default {
       v-model="newTeamName"
       v-if="teamsStore.getTeamsStats.find((team) => !team.isIncluded)"
     />
+
     <button
       v-if="teamsStore.getTeamsStats.find((team) => !team.isIncluded)"
       @click="teamsStore.handleCreateTeam(newTeamName)"
     >
       ADD TEAM
     </button>
-    <RouterLink to="/topics">
+
+    <RouterLink to="/topics-picker">
       <button
         v-if="teamsStore.getTeamsStats.find((team) => team.isIncluded)"
         @click=""

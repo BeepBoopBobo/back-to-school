@@ -3,10 +3,10 @@ import { defineStore } from 'pinia'
 export const useTeamsStore = defineStore('teams',{
   state:()=>({
     teams:[
-      {id: 0, name: 'x', points: 0, isActive: true, isIncluded: true},
-      {id: 1, name: 'y', points: 0, isActive: false, isIncluded: true},
-      {id: 2, name: 'z', points: 0, isActive: false, isIncluded: true},
-      {id: 3, name: 'xd', points: 0, isActive: false, isIncluded: false},
+      {id: 0, name: 'x', points: 0, isActive: true, isIncluded: false, teamColor: '--green'},
+      {id: 1, name: 'y', points: 0, isActive: false, isIncluded: false, teamColor: '--red'},
+      {id: 2, name: 'z', points: 0, isActive: false, isIncluded: false, teamColor: '--yellow'},
+      {id: 3, name: 'xd', points: 0, isActive: false, isIncluded: false, teamColor: '--blue'},
     ],
   }),
   getters:{

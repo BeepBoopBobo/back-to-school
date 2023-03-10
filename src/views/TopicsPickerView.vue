@@ -49,8 +49,8 @@ export default {
             ).childTopics"
             :class="
               topicsStore.activeTopics.includes(topic)
-                ? 'child-topic container active'
-                : 'child-topic container'
+                ? 'child-topic active'
+                : 'child-topic '
             "
           >
             {{ topic.name }}
@@ -64,9 +64,9 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .parent-box {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .theme {
   font-size: 1.5rem;
@@ -78,7 +78,21 @@ export default {
 }
 .child-topic {
   padding: 10px 20px;
+  font-weight: bold;
   color: black;
-  background-color: white;
+
+  background: linear-gradient(
+    to right,
+    rgba(227, 255, 126, 0.65) 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.2s ease-in;
+}
+
+.child-topic.active {
+  background-position: left bottom;
+  color: rgba(0, 0, 0, 0.8);
 }
 </style>

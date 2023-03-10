@@ -5,8 +5,11 @@ import TeamsScore from "./components/TeamsScore.vue";
 
 <template>
   <TeamsScore></TeamsScore>
-
-  <RouterView />
+  <div id="paper">
+    <div id="pattern">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style scoped></style>

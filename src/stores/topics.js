@@ -4,46 +4,47 @@ export const useTopicsStore = defineStore('topics',{
   state:()=>({
     topics:[
       {id: 0, name: 'Musicaly fit', parentalTopic:'Music', questions:[
-        {name: 'pop', isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'funk',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'jazz',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+        {id: 0,name: 'funk',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 1,name: 'pop', isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 2,name: 'jazz',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
       ]},
       {id: 1, name: 'Mooovies ',parentalTopic:'Cinema', questions:[
-        {name: 'horror',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'bromance',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'comedy',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+        {id: 3,name: 'horror',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 4,name: 'bromance',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 5,name: 'comedy',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
       ]},
       {id: 2, name: 'Oscars',parentalTopic:'Cinema', questions:[
-        {name: 'actor',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'actress',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'unknown',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+        {id: 6,name: 'actor',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
+        {id: 7,name: 'actress',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
+        {id: 8,name: 'unknown',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
       ]},
       {id: 3, name: 'Animated Masterpieces',parentalTopic:'Cinema', questions:[
-        {name: 'Shrek',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'Cars',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'Tangled',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+        {id: 9,name: 'Shrek',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 10,name: 'Cars',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 11,name: 'Tangled',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
       ]},
       {id: 4, name: 'EU states',parentalTopic:'Geography', questions:[
-        {name: 'Germany',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'Poland',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'Slovakia',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+        {id: 12,name: 'Germany',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 13,name: 'Poland',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 14,name: 'Slovakia',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
       ]},
-      {id: 5, name: 'NA states',parentalTopic:'Geography', questions:[
-        {name: 'Alaska',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'Colorado',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-        {name: 'California',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+      {id: 5,name: 'NA states',parentalTopic:'Geography', questions:[
+        {id: 15,name: 'Alaska',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 16,name: 'Colorado',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
+        {id: 17,name: 'California',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'no'},{id:'w1',answer: 'no'},{id:'w2',answer: 'no'}]},
       ]},
     ],
     activeQuestion:{},
-    activeTopics:[      {id: 4, name: 'EU states',parentalTopic:'Geography', questions:[
-      {name: 'Germany',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-      {name: 'Poland',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-      {name: 'Slovakia',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+    activeTopics:[     
+      {id: 4, name: 'EU states',parentalTopic:'Geography', questions:[
+      {id: 12,name: 'Germany',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
+      {id: 13,name: 'Poland',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
+      {id: 14,name: 'Slovakia',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
     ]},
-    {id: 5, name: 'NA states',parentalTopic:'Geography', questions:[
-      {name: 'Alaska',isActive: true, points: 500, rightA: 'yes', wrongA:['no','no','no']},
-      {name: 'Colorado',isActive: true, points: 300, rightA: 'yes', wrongA:['no','no','no']},
-      {name: 'California',isActive: true, points: 100, rightA: 'yes', wrongA:['no','no','no']},
+    {id: 5,name: 'NA states',parentalTopic:'Geography', questions:[
+      {id: 15,name: 'Alaska',isActive: true, points: 500, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
+      {id: 16,name: 'Colorado',isActive: true, points: 300, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
+      {id: 17,name: 'California',isActive: true, points: 100, rightA: {id: 'r0', answer:'yes'}, wrongA:[{id:'w0',answer: 'noo'},{id:'w1',answer: 'nooooo'},{id:'w2',answer: 'nn'}]},
     ]},],
     parentalTopics:[],
     maxTopics: 5,
@@ -64,8 +65,22 @@ export const useTopicsStore = defineStore('topics',{
       let temp= [];
       parents.forEach(parent=> temp.push({parentTopic: parent, childTopics: this.topics.filter(topic=> topic.parentalTopic== parent)}))
       return temp;
+    },
+    getActiveQuestionAnswersRan(){
+      let tempArr= [...this.activeQuestion?.wrongA];
+      tempArr.splice(Math.floor(Math.random()*4),0, this.activeQuestion?.rightA);
+      return tempArr;
+    },
+    getFiftyFifty(){
+      let tempArr=[...this.getActiveQuestionAnswersRan];
+      let rightIndex= tempArr.indexOf(tempArr.find(item=> item.id=='r0')) ;
+      let wrongIndex= Math.floor(Math.random()*4);
+      while(wrongIndex == rightIndex){
+        wrongIndex= Math.floor(Math.random()*4);
+      };
+      tempArr.forEach(answer=> tempArr.indexOf(answer) != rightIndex && tempArr.indexOf(answer) != wrongIndex? answer.answer='': null);
+      return tempArr;
     }
-
   },
   actions:{
     printParents(){

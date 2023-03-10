@@ -20,8 +20,17 @@ export default {
       <div class="headline">
         {{ topic.name }}
       </div>
-      <div v-for="question in topic.questions" class="question-val container">
-        {{ question.points }}
+      <div
+        v-for="question in topic.questions"
+        class="question-val sticker"
+        onclick=""
+      >
+        <RouterLink
+          :to="`/question/${question.id}`"
+          @click="topicsStore.setActiveQuestion(question.name)"
+        >
+          {{ question.points }}
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -29,7 +38,7 @@ export default {
 
 <style scoped>
 .topic {
-  width: 18%;
+  width: 12%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -37,19 +46,19 @@ export default {
 }
 .headline {
   white-space: nowrap;
+  font-weight: bolder;
   text-align: center;
-  color: var(--beige);
+  width: 100%;
+  color: blue;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #question-picker {
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
-  justify-content: left;
+  justify-content: space-around;
   gap: 20px;
-  background-color: var(--brown);
-  padding: 20px;
-  box-sizing: border-box;
-  min-height: 100vh;
 }
 
 .question-val {
@@ -59,5 +68,15 @@ export default {
 }
 .container {
   max-height: 80px;
+}
+.sticker {
+  margin: auto;
+  font-size: 2rem;
+  width: 80%;
+  aspect-ratio: 1/1;
+  background-color: white;
+}
+.sticker:hover {
+  border: 2px solid red;
 }
 </style>
